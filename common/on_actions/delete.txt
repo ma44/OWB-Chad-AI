@@ -1,0 +1,41 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			CES = {
+				every_owned_state = {
+					add_extra_state_shared_building_slots = 25
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			CES = {
+				set_temp_variable = { x = 0 }
+				every_owned_state = {
+					add_to_temp_variable = { x = building_level@industrial_complex }
+				}
+				set_temp_variable = { y = 0 }
+				every_owned_state = {
+					add_to_temp_variable = { y = building_level@arms_factory }
+				}
+				divide_temp_variable = { x = y }
+				add_to_array = { global.stats_array = x }
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { date > 2276.1.1 }
+				CES = {
+					for_each_loop = {
+						array = global.stats_array
+
+						log = "[?v]"
+					}
+				}
+			}
+		}
+	}
+}

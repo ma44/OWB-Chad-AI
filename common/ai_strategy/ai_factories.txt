@@ -1,0 +1,64 @@
+factories_75_76 = {
+	enable = {
+		industrial_complex > 9
+	}
+	abort = {
+		date > 2277.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 300
+	}
+}
+
+factories_77_79 = {
+	enable = {
+		industrial_complex > 9
+		date > 2277.1.1
+	}
+	abort = {
+		date > 2280.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 100
+	}
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 100
+	}
+}
+
+factories_80 = {
+	enable = {
+		date > 2280.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 500
+	}
+}
+
+
+factories_mils_small = {
+	enable = {
+		industrial_complex < 10
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 500
+	}
+}
