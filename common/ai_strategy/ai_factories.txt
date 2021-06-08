@@ -1,64 +1,40 @@
-factories_75_76 = {
+hardcore_civ_factory = {
 	enable = {
-		industrial_complex > 9
+		date < 2278.1.1
 	}
 	abort = {
-		date > 2277.1.1
+		date > 2278.1.1
 	}
-	abort_when_not_enabled = yes
+	#abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = building_target
-		id = industrial_complex
-		value = 300
+		type = added_military_to_civilian_factory_ratio
+		value = -90 #Should be 10-90 mils-civs
 	}
 }
 
-factories_77_79 = {
+hardcore_mil_factory = {
 	enable = {
-		industrial_complex > 9
-		date > 2277.1.1
+		OR = {
+			date > 2280.1.1
+			AND = {
+				has_war = yes
+				any_enemy_country = {
+					ic_ratio = {
+						tag = ROOT
+						ratio > 0.4
+					}
+				}
+			}
+		}
+		
 	}
-	abort = {
-		date > 2280.1.1
-	}
-	abort_when_not_enabled = yes
+	#abort_when_not_enabled = yes
 
 	ai_strategy = {
-		type = building_target
-		id = industrial_complex
-		value = 100
-	}
-	ai_strategy = {
-		type = building_target
-		id = arms_factory
-		value = 100
-	}
-}
-
-factories_80 = {
-	enable = {
-		date > 2280.1.1
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = building_target
-		id = arms_factory
-		value = 500
+		type = added_military_to_civilian_factory_ratio
+		value = 90 #Should be 90:10 mils-civ
 	}
 }
 
 
-factories_mils_small = {
-	enable = {
-		industrial_complex < 10
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = building_target
-		id = arms_factory
-		value = 500
-	}
-}

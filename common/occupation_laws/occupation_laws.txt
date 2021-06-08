@@ -278,7 +278,7 @@ wasteland_pacification_occupation = {
 		modifier = {
 			check_variable = {
 				var = resistance
-				value = 25
+				value = 75
 				compare = greater_than
 			}
 			add = 80
